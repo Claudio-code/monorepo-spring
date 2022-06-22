@@ -1,0 +1,15 @@
+
+version: '3'
+
+services:
+  hr-worker:
+    container_name: hr-worker
+    build: ./hr-worker
+    ports:
+      - "8080:8080"
+    networks:
+      - monorepo-network
+
+networks:
+  monorepo-network:
+    driver: bridge
