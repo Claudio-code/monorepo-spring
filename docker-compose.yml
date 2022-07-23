@@ -10,6 +10,14 @@ services:
     networks:
       - monorepo-network
 
+  ms-payroll:
+    container_name: ms-payroll
+    build: ./ms-payroll
+    ports:
+      - "8081:8081"
+    networks:
+      - monorepo-network
+
 networks:
   monorepo-network:
     driver: bridge
