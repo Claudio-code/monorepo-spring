@@ -3,12 +3,8 @@ package com.devsuperior.hrworker.resources;
 import com.devsuperior.hrworker.dto.WorkerDTO;
 import com.devsuperior.hrworker.services.WorkerService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +26,7 @@ public class WorkerResource {
     }
     
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody WorkerDTO workerDTO) {
         workerService.create(workerDTO);
     }
